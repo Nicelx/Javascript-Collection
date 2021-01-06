@@ -44,12 +44,38 @@
 
 
 
-$(() => {
-	$('a, div').click(() => {
-		console.log('a or div clicked')
-	})
-})
+// $(() => {
+// 	$('a, div').click(() => {
+// 		console.log('a or div clicked')
+// 	})
+// })
+
+// all except two first
+// $(() => {
+// 	$('div:gt(2)').html('changed')
+// })
+
+// Testing whether a selection contains elements.
+// if ( $( "div" ).length ) {
+//     console.log($('div').length) 
+// }
+
+// let div = $('div') // saving selections
+// console.log(div)
+
+
+// filtering
+// $( "div" ).has( "p" ).html('div that has p');        
+// $( "div" ).not( ".catchme" ).html('div withouts catchMe class');         
+// $( "div" ).filter( ".apple" ).html('apple'); 
+// $( "div" ).first().html('first haha');             
+// $( "div" ).eq( 2 ).html('third hhaahhaahhaa');    // 3      
 
 
 
+$( "form :checked" )
+$( "form :disabled" )
+$( "form :enabled" )
+$( "form :input" )
+$( "form :selected" )
 
