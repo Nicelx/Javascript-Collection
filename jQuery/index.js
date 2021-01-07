@@ -73,9 +73,61 @@
 
 
 
-$( "form :checked" )
-$( "form :disabled" )
-$( "form :enabled" )
-$( "form :input" )
-$( "form :selected" )
+// $( "form :checked" )
+// $( "form :disabled" )
+// $( "form :enabled" )
+// $( "form :input" )
+// $( "form :selected" )
+
+
+
+//
+// $( "body" )
+//     .find( "div" )
+//     .eq( 2 )
+//         .html( "new text for the third div" )
+//         .end() // Restores the selection
+//     .eq( 0 )
+// 		.html( "new text for the first div" )
+// 		.end().width('10px');
+
+
+// $('div').position()
+// $('input[type = text]').val('changed')
+
+
+// $('div:first').appendTo('form')			//add 'div:first' selector content into selector 'form'
+// $('div:first').insertAfter('p')
+// $('div').append('appendet text')			//add content append method to selector div
+// $('div:first').clone().insertAfter('p')	//clone first div and insert it after p
+// $('div').remove(); 	// delete
+// $('div').detach(); 	// temporaly delete
+// $('div').empty();  	// clear content
+
+
+
+// $( "<p>This is a new paragraph</p>" ).insertAfter('p'); //creating new element and pass it after 'p' selector
+// Creating a new element with an attribute object.
+// $( "<a/>", {
+//     html: "This is a <strong>new</strong> link",
+//     "class": "new",
+//     href: "foo.html"
+// }).appendTo('body');
+
+// perfomance
+var myItems = [];
+ 
+for ( var i = 0; i < 100; i++ ) {
+    myItems.push( "<li>item " + i + "</li>" );
+}
+ 
+$('body').append( myItems.join( "" ) );
+
+
+
+
+
+
+
+
 
