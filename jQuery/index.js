@@ -115,17 +115,24 @@
 // }).appendTo('body');
 
 // perfomance
-var myItems = [];
+// var myItems = [];
  
-for ( var i = 0; i < 100; i++ ) {
-    myItems.push( "<li>item " + i + "</li>" );
-}
+// for ( var i = 0; i < 100; i++ ) {
+//     myItems.push( "<li>item " + i + "</li>" );
+// }
  
-$('body').append( myItems.join( "" ) );
+// $('body').append( myItems.join( "" ) );
 
 
 
+// $( "a:first" ).attr( "href", function( idx, href ) {
+//     return "/new/" + href;
+// });
 
+
+// console.log($('div').get(0))
+// console.log($('div').html())
+// console.log($('div')[0])
 
 
 
