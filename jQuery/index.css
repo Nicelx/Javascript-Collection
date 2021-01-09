@@ -1,4 +1,29 @@
 .test {
 	font-weight: bold;
-	color: red;
+	color: rgb(151, 5, 235);
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+p {
+	padding: 5px;
+	border-radius: 2px;
+	border: 1px solid rgba(0, 0, 0, 0.253);
+	width: 200px;
+}
+input[type=text] {
+	color: rgba(10, 10, 10, 0.253)
+}
+
+.magic {
+	padding: 10px;
+	transition: padding .5s
+}
+.secondMagic {
+	background-color:rgb(151, 5, 235)
+}
+.magic:hover {
+	padding: 15px;
+	font-size: 1.2rem;
 }
