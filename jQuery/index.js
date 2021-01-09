@@ -1,3 +1,6 @@
+let result;
+
+
 // $(document).ready(() => {
 // 	$('a').click((event) => {
 // 		event.preventDefault();
@@ -135,6 +138,20 @@
 // console.log($('div')[0])
 
 
+// result =$('input[type=checkbox]').parent();
+// result =$('input[type=checkbox]').parents();
+// result =$('input[type=checkbox]').parentsUntil('body');
+// result =$('input[type=checkbox]').closest();
 
+// result = $('div.apple').children()  			// look only 1 lvl
+// result = $('div.apple').find('a')			//	look all childs
 
+// result = $('div.apple').next();
+// result = $('div.apple').prev();
+// result = $('div.apple').siblings();
+// result = $('div.apple').nextAll();
+// result = $('div.apple').nextUntil('p');
+// result = $('div.apple').prevAll();
+// result = $('div.apple').prevUntil();
 
+console.log(result)
