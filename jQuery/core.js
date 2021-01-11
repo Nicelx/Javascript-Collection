@@ -1,5 +1,12 @@
 let result;
 
+obj = {
+	name: 'Nikolay',
+	surname: 'Gorshkov',
+	age: 28,
+	hair: 'black'
+}
+
 // $(document).ready(() => {
 // 	$('a').click((event) => {
 // 		event.preventDefault();
@@ -206,6 +213,31 @@ let result;
 // $.type( /test/ ); // "regexp"
 // $.type( new Date() ); // "date"
 
+
+// $.each() can iterate objects
+// $.each() only for plain arrays,objects. For jQuery collection use .each()
+
+// $.each(obj, function(key, value) {
+// 	$('<p/>').html(`${key} : ${value}`).appendTo('body')
+// })
+
+// $('p').each(function(index,elem) {
+// 	$('<p/>').appendTo('div.apple').html(`${index} : ${$(elem).html()}`)
+// })
+
+
+// result = $('div.apple p').map(function(ind, elem) {
+// 	return elem
+// }).get()
+
+// $.map() only for plain arrays, object. don't require .get() to return plain js array.
+// result = $.map([1,2,3], function(i,el) {
+// 	return el
+// })
+
+
+// result = $('div.apple p').index($('#wtf'))
+// result = $('div.apple p').index($('p.content'))
 
 console.log(result);
 
