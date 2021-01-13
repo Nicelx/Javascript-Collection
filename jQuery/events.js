@@ -36,15 +36,40 @@ const foo = () => console.log("foo function fired");
 // })
 
 // only one time
-$("p.content").one("click", foo);
-$("p.content").one("click, mouseover", (event) => console.log(event.type));
+// $("p.content").one("click", foo);
+// $("p.content").one("click, mouseover", (event) => console.log(event.type));
 
-// hover can receive 1|2 functions
-$("p.content").hover(
-	function () {
-		$(this).addClass("magic");
+// // hover can receive 1|2 functions
+// $("p.content").hover(
+// 	function () {
+// 		$(this).addClass("magic");
+// 	},
+// 	function () {
+// 		$(this).addClass("secondMagic");
+// 	}
+// );
+
+// we can bidn events
+// $( "p.content" ).bind( "click", function( event ) {
+//     alert( "Hello." );
+// });
+
+// jQuery wrap event with own version
+// $('p.content').click(event => console.log(event))
+// $('p.content').click(event => console.log(event.originalEvent))
+
+
+// many events and handlers
+$( "p.content" ).on({
+    mouseenter: function() {
+        $(this).addClass('magic');
+    },
+    mouseleave: function() {
+		$(this).addClass('secondMagic')
 	},
-	function () {
-		$(this).addClass("secondMagic");
-	}
-);
+    click: function(event) {
+		console.dir( event );
+		$(this).removeClass(['magic', 'secondMagic'])
+		$(this).off()
+    }
+});
