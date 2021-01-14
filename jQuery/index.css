@@ -21,9 +21,25 @@ input[type=text] {
 	transition: padding .5s
 }
 .secondMagic {
-	background-color:rgb(151, 5, 235)
+	background-color:rgb(5, 235, 24)
 }
 .magic:hover {
 	padding: 15px;
 	font-size: 1.2rem;
+}
+.lightbulb {
+	width: 100px;
+	height: 100px;
+}
+.on {
+	background-color: rgb(19, 245, 49);
+}
+.off {
+	background-color: rgb(245, 19, 19);
+}
+.switchers {
+	width: 80px;
+	padding: 10px;
+	margin: 8px;
+	background-color: rgb(112, 107, 107);
 }
