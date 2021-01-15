@@ -15,7 +15,9 @@ p {
 input[type=text] {
 	color: rgba(10, 10, 10, 0.253)
 }
-
+.apple {
+	position: relative;
+}
 .magic {
 	padding: 10px;
 	transition: padding .5s
