@@ -8,7 +8,8 @@
 	</head>
 	<body>
 		<a href="#">Link</a>
-		<div>content below a tag</div>
+		<div id = "loading_indicator"></div>
+		<div id = "forLoad">content below a tag</div>
 		<div class = "catchme">second div</div>
 		<div class = "run">third div</div>
 		<div class = "apple">
@@ -19,9 +20,10 @@
 			<p> fourth paragraph <a>link</a> <strong>strong div</strong></p>
 		</div>
 		
-		<form action="">
+		<form  id = "myForm" action="javascript:alert( 'success!' );">
 			<input type="checkbox" checked>
-			<input type="text" checked value = "haha">
+			<input id = 'phone' type="text" checked value = "haha">
+			<input type = 'submit' value = 'go'>
 		</form>
 		<p>paragraph</p>
 		<button>remove event</button>
@@ -42,10 +44,12 @@
 		</div>
 		<div id="master_switch">master switch</div> -->
 		<button id ="effects">effects run</button>
+		<button id ="ajax">ajax</button>
 
 		<script src = "./jquery.js"></script>
 		<script src="./core.js"></script>
 		<script src="./events.js"></script>
 		<script src="./effects.js"></script>
+		<script src="./ajax.js"></script>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-$("#effects").click(clickHandler);
+// $("#effects").click(clickHandler);
 
 // function clickHandler() {
 // 	$("p").hide('slow');  //slow, normal, fast
