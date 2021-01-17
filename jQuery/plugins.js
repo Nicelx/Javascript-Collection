@@ -169,100 +169,100 @@
 // })( jQuery );
 
 // Widget Factory
-$.widget("nmk.progressbar", {
-	// Default options.
-	options: {
-		value: 0,
-	},
-	_create: function () {
-		this.element.addClass("progressbar");
-		this._update();
-	},
+// $.widget("nmk.progressbar", {
+// 	// Default options.
+// 	options: {
+// 		value: 0,
+// 	},
+// 	_create: function () {
+// 		this.element.addClass("progressbar");
+// 		this._update();
+// 	},
 
-	_setOption: function (key, value) {
-		this.options[key] = value;
-		this._update();
-	},
+// 	_setOption: function (key, value) {
+// 		this.options[key] = value;
+// 		this._update();
+// 	},
 
-	_update: function () {
-		var progress = this.options.value + "%";
-		this.element.text(progress);
-		if (this.options.value == 100) {
-			this._trigger("complete", null, { value: 100 });
-		}
-    },
-    _destroy: function() {
-        this.element
-            .removeClass( "progressbar" )
-            .text( "" );
-    },
+// 	_update: function () {
+// 		var progress = this.options.value + "%";
+// 		this.element.text(progress);
+// 		if (this.options.value == 100) {
+// 			this._trigger("complete", null, { value: 100 });
+// 		}
+//     },
+//     _destroy: function() {
+//         this.element
+//             .removeClass( "progressbar" )
+//             .text( "" );
+//     },
 
-	// Create a public method.
-	value: function (value) {
-		// No value passed, act as a getter.
-		if (value === undefined) {
-			return this.options.value;
+// 	// Create a public method.
+// 	value: function (value) {
+// 		// No value passed, act as a getter.
+// 		if (value === undefined) {
+// 			return this.options.value;
 
-			// Value passed, act as a setter.
-		} else {
-			this.options.value = this._constrain(value);
-			var progress = this.options.value + "%";
-			this.element.text(progress);
-		}
-	},
-	// Create a private method.
-	_constrain: function (value) {
-		if (value > 100) {
-			value = 100;
-		}
+// 			// Value passed, act as a setter.
+// 		} else {
+// 			this.options.value = this._constrain(value);
+// 			var progress = this.options.value + "%";
+// 			this.element.text(progress);
+// 		}
+// 	},
+// 	// Create a private method.
+// 	_constrain: function (value) {
+// 		if (value > 100) {
+// 			value = 100;
+// 		}
 
-		if (value < 0) {
-			value = 0;
-		}
+// 		if (value < 0) {
+// 			value = 0;
+// 		}
 
-		return value;
-	},
-});
+// 		return value;
+// 	},
+// });
 
-// $( "<div />" ).appendTo( "body" ).progressbar({ value: 20 });
-// $( "<div />" ).appendTo( "body" ).progressbar();
-// $( "<div />" ).appendTo( "body" ).progressbar({value: 120});
+// // $( "<div />" ).appendTo( "body" ).progressbar({ value: 20 });
+// // $( "<div />" ).appendTo( "body" ).progressbar();
+// // $( "<div />" ).appendTo( "body" ).progressbar({value: 120});
 
-// var bar = $( "<div />" ).appendTo( "body").progressbar({ value: 20 });
+// // var bar = $( "<div />" ).appendTo( "body").progressbar({ value: 20 });
 
-// // Get the current value.
-// alert( bar.progressbar( "value" ) );
+// // // Get the current value.
+// // alert( bar.progressbar( "value" ) );
 
-// // Update the value.
-// bar.progressbar( "value", 50 );
+// // // Update the value.
+// // bar.progressbar( "value", 50 );
 
-// // Get the current value again.
-// alert( bar.progressbar( "value" ) );
+// // // Get the current value again.
+// // alert( bar.progressbar( "value" ) );
 
-// binding to widget event
-var bar = $("<div />")
-	.appendTo("body")
-	.progressbar({
-		complete: function (event, data) {
-			alert("Callbacks are great!");
-		},
-	})
-	.bind("progressbarcomplete", function (event, data) {
-		alert(
-			"Events bubble and support many handlers for extreme flexibility."
-		);
+// // binding to widget event
+// var bar = $("<div />")
+// 	.appendTo("body")
+// 	.progressbar({
+// 		complete: function (event, data) {
+// 			alert("Callbacks are great!");
+// 		},
+// 	})
+// 	.bind("progressbarcomplete", function (event, data) {
+// 		alert(
+// 			"Events bubble and support many handlers for extreme flexibility."
+// 		);
 
-		alert("The progress bar value is " + data.value);
-	});
+// 		alert("The progress bar value is " + data.value);
+// 	});
 
-// bar.progressbar("option", "value", 100);
+// // bar.progressbar("option", "value", 100);
 
-$.nmk.progressbar.prototype.reset = function() {
-    this._setOption( "value", 0 );
-};
+// $.nmk.progressbar.prototype.reset = function() {
+//     this._setOption( "value", 0 );
+// };
 
-$("#plugins").click(() => {
-	// $('p').popup('open');
-    // $('p').popup('close');
-    bar.progressbar("option", "value", 100);
-});
+// $("#plugins").click(() => {
+// 	// $('p').popup('open');
+//     // $('p').popup('close');
+//     bar.progressbar("option", "value", 100);
+// });
