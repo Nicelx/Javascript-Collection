@@ -28,3 +28,10 @@
 .modal-active {
 	display: block;
 }
+
+.dropdown {
+	visibility: hidden;
+}
+.dropdown-active {
+	visibility:visible;
+}
