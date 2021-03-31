@@ -1,4 +1,4 @@
-const {curry} = require('ramda');
+const { curry } = require("ramda");
 let out;
 
 // const curry = (f) => (x) => (y) => f(x, y);
@@ -28,15 +28,45 @@ const isOdd = modulo(2);
 
 // out = idOdd(3);
 
+const filter1 = curry((f, xs) => xs.filter(f));
 
-const filter1 = curry((f, xs) => xs.filter(f))
+const getOdds = filter1(isOdd);
+out = getOdds([1, 2, 3, 4, 5]);
 
-const getOdds = filter1(isOdd)
-out = getOdds([1,2,3,4,5])
-
-const replace = curry((regex, replacement, str) => str.replace(regex, replacement))
-const replaceVowels = replace(/[AEUIO]/ig, '!');
-out2 = replaceVowels('Hey i haave words')
+const replace = curry((regex, replacement, str) =>
+	str.replace(regex, replacement)
+);
+const replaceVowels = replace(/[AEUIO]/gi, "!");
+out2 = replaceVowels("Hey i haave words");
 
 console.log(out2);
 
+
+const getProp = (prop) => (obj) => {
+	if(obj[prop]) {
+		return obj[prop]
+	}
+	else {
+		throw new Error('property doesn\'t exist');
+	}
+};
+
+const getSurnames = getProp('surname')
+const getNames = getProp('name')
+
+const arr = [
+	{
+		name: "asdf",
+		surname: "asdf",
+	},
+	{
+		name: "22222",
+		surname: "as22222df",
+	},
+	{
+		name: 'slon',
+		surname: 'slonich'
+	}
+];
+const result = arr.map(getNames);
+console.log(result)
