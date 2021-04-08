@@ -22,15 +22,6 @@ const halfTheFirstLargeNumber = xs =>
 const res = halfTheFirstLargeNumber([1,4,50])
 console.log(res)
 
-
-
-
-
-
-
-
-
-
 const nextCharForNumberString_ = (str) => {
 	const trimmed = str.trim();
 	const number = parseInt(trimmed);
