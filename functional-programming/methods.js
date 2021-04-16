@@ -48,3 +48,30 @@ Either.of(List.of(4)).map(xs => Either.of(3))
 // Either(List(Either))
 // Either(Either(List))
 // Either(List)
+
+
+// 
+
+const eitherToTask = e =>
+  e.fold(Task.rejected, Task.of)
+
+const fake = id =>
+  ({id: id, name: 'user1', best_friend_id: id + 1})
+
+const Db = ({
+  find: id =>
+    Task((rej, res) =>
+      setTimeout(() =>
+        res(id > 2 ? Right(fake(id)) : Left('not found')),
+        100))
+})
+
+const send = (code, json) =>
+  console.log(`sending ${code}: ${JSON.stringify(json)}`)
+
+Db.find(3)  // Task(Either(user))
+.chain(eitherToTask)  //Task(User)
+.chain(u => Db.find(u.best_friend_id))
+.chain(eitherToTask)
+.fork(error => send(500, {error}),
+                    u => send(200, u))
